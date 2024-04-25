@@ -7,10 +7,14 @@ export interface Game {
     id: number 
     name: string
     thumbnailUrl: string
+    address : Address
 }
 // interface FetchGameResponse {
 //     result : Game[]
 // }
+interface Address {
+    zipcode : string
+}
 
 const useGames = () => {
     const [games, setGames]=useState<Game[]>([]);
