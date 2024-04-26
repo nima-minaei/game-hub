@@ -1,9 +1,12 @@
 import useGenres, { Genre } from '../hooks/useGenres'
 import useData from '../hooks/useDate'
+import { Spinner } from '@chakra-ui/react'
 
 const GenreList = () => {
   
-    const {data} = useGenres()
+    const {data, isLoading} = useGenres()
+
+    if (isLoading) return <Spinner/>
 
 
     return (
