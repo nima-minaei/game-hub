@@ -2,6 +2,7 @@
 // import apiClient from "../services/api-client";
 // import { CanceledError } from "axios";
 import useData from "./useDate";
+import { Genre } from "./useGenres";
 
 
 export interface Game {
@@ -17,7 +18,7 @@ interface Address {
     zipcode : string
 }
 
-const useGames = () => useData<Game>('/users')
+const useGames = (selectedGenre: Genre | null) => useData<Game>('/users', {params: {genres:selectedGenre?.id }}, [selectedGenre?.id])
 //     {
 //     const [games, setGames]=useState<Game[]>([]);
 //     const [error, setError]=useState('');
