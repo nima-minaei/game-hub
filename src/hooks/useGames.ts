@@ -1,3 +1,4 @@
+import { GameQuery } from './../App';
 // import { useEffect, useState } from "react";
 // import apiClient from "../services/api-client";
 // import { CanceledError } from "axios";
@@ -19,7 +20,7 @@ interface Address {
     zipcode : string
 }
 
-const useGames = (selectedGenre: Genre | null , selectedPlatform: Platform | null) => useData<Game>('/users', {params: {genres:selectedGenre?.id, platforms:selectedPlatform?.id }}, [selectedGenre?.id, selectedPlatform?.id])
+const useGames = (gameQuery: GameQuery) => useData<Game>('/users', {params: {genres:gameQuery.genre?.id, platforms:gameQuery.platform?.id }}, [gameQuery])
 //     {
 //     const [games, setGames]=useState<Game[]>([]);
 //     const [error, setError]=useState('');
