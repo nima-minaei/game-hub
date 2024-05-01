@@ -1,6 +1,6 @@
 import useData from "./useDate"
 
-interface Platform{
+export interface Platform {
     id: number
     name: string
     username: string
@@ -8,4 +8,4 @@ interface Platform{
 
 const usePlatforms = () => useData<Platform>('/users')
 
-export default usePlatforms
+export default usePlatforms;

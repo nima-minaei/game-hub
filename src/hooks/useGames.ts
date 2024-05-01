@@ -3,6 +3,7 @@
 // import { CanceledError } from "axios";
 import useData from "./useDate";
 import { Genre } from "./useGenres";
+import { Platform } from "./usePlatform";
 
 
 export interface Game {
@@ -18,7 +19,7 @@ interface Address {
     zipcode : string
 }
 
-const useGames = (selectedGenre: Genre | null) => useData<Game>('/users', {params: {genres:selectedGenre?.id }}, [selectedGenre?.id])
+const useGames = (selectedGenre: Genre | null , selectedPlatform: Platform | null) => useData<Game>('/users', {params: {genres:selectedGenre?.id, platforms:selectedPlatform?.id }}, [selectedGenre?.id, selectedPlatform?.id])
 //     {
 //     const [games, setGames]=useState<Game[]>([]);
 //     const [error, setError]=useState('');
