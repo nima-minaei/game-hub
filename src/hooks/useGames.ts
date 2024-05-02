@@ -20,7 +20,12 @@ interface Address {
     zipcode : string
 }
 
-const useGames = (gameQuery: GameQuery) => useData<Game>('/users', {params: {genres:gameQuery.genre?.id, platforms:gameQuery.platform?.id }}, [gameQuery])
+const useGames = (gameQuery: GameQuery) => useData<Game>('/users', {params: {
+        genres:gameQuery.genre?.id,
+        platforms:gameQuery.platform?.id,
+        ordering: gameQuery.sortOrder
+    }}
+    , [gameQuery])
 //     {
 //     const [games, setGames]=useState<Game[]>([]);
 //     const [error, setError]=useState('');
