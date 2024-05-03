@@ -11,8 +11,8 @@ const GameCard = ({game} : Props) => {
     <Card>
         <Image src='game.thumbnailUrl' />
         <CardBody>
-            <Heading fontSize="2xl">{game.name}</Heading>
             <CriticScore score = {game.address.zipcode} />
+            <Heading fontSize="2xl">{game.name}</Heading>
         </CardBody>
     </Card>
   )
